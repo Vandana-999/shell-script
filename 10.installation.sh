@@ -15,3 +15,11 @@ if(($?==0)); then
 else
   echo "Installing nginx is FAILURE "
 fi
+
+dnf install mysql11 -y
+
+if(($?==0)); then 
+  echo "Installing mysql is SUCCESS"
+else
+  echo "Installing mysql is FAILURE "
+fi
