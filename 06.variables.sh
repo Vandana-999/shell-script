@@ -7,6 +7,8 @@ echo "Current Time $StartTime"
 sleep 10
 
 END_TIME=$(date +%s)
-Total_time=$(($END_TIME-$StartTime))
+echo " $END_TIME"
 
-echo " difference $Total_Time"
+Total_time=$(($StartTime-$END_TIME))
+
+echo " difference $Total_time"
