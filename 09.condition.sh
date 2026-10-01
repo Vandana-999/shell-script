@@ -1,9 +1,9 @@
 #!/bin/bash
 
-NUM=$1
+#NUM=$1
 
 echo " Please enter Number "
-
+read NUM
 if (($NUM > 20)); then
   echo " number greater then 20 "
 elif (($NUM < 20 )); then
