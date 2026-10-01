@@ -9,6 +9,6 @@ sleep 10
 END_TIME=$(date +%s)
 echo " $END_TIME"
 
-Total_time=$(($StartTime-$END_TIME))
+Total_time=$(($END_TIME-$StartTime))
 
 echo " difference $Total_time"
