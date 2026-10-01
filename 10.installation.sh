@@ -8,4 +8,4 @@ if (($USER != 0)); then
 fi
 
 echo installing ngnix
-dnf intsall ngnix -y
+dnf install ngnix -y
