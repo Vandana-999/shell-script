@@ -8,4 +8,10 @@ if (($USER != 0)); then
 fi
 
 echo installing ngnix
-dnf install ngnix -y
+dnf install nginx -y
+
+if(($?==0)); then 
+  echo "Installing nginx is SUCCESS"
+else
+  echo "Installing nginx is FAILURE "
+fi
