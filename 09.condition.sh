@@ -8,4 +8,4 @@ if [$NUM > 20]; then
 
   echo " number greater then 20 "
 
-if
+fi
