@@ -9,6 +9,7 @@ fi
 
 VALIDATE()
 {
+  echo $1
   if(($1==0)); then 
     echo "$2 is SUCCESS"
   else
@@ -17,7 +18,7 @@ VALIDATE()
   fi
 }
 
-echo installing ngnix
+
 dnf install nginx -y
 
 VALIDATE $? "Installing nginx"
