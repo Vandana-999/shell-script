@@ -23,7 +23,7 @@ VALIDATE()
 
 for i in $@
 do
-  dnf list installed $i
+  dnf list installed $i &>> $LOG_File
   if (($? !=0)); then
     echo "Package not installed, Installing now"
     dnf install $i -y
