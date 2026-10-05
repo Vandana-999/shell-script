@@ -1,8 +1,11 @@
-#!/bin/bash
-
 USER=$(id -u)
 LOG_DIR=/var/log/Shell-Script
 LOG_File=/var/log/Shell-Script/$0.log
+
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 if (($USER != 0)); then
    echo "please use root access to run the command"  |tee -a $LOG_File
@@ -21,8 +24,14 @@ VALIDATE()
   fi
 }
 
-for i in $@
+for Package in $@
 do
-    dnf install $i -y &>> $LOG_File
-    VALIDATE $? "Installing $i"
+  dnf list installed $Package &>> $LOG_File
+  if (($? !=0)); then
+    echo "$Package not installed, $Y Installing now $N"
+    dnf install $Package -y &>> $LOG_File
+    VALIDATE $? "Installing $Package"
+  else
+    echo "$Package already Installed .. $Y skipping $N"
+  fi
 done
