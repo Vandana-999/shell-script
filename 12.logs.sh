@@ -5,7 +5,7 @@ LOG_DIR=/var/log/Shell-Script
 LOG_File=/var/log/Shell-Script/$0.log
 
 if (($USER != 0)); then
-   echo "please use root access to run the command" &>> $LOG_File
+   echo "please use root access to run the command"  |tee -a $LOG_File
    exit 1
 fi
 
@@ -14,9 +14,9 @@ VALIDATE()
 {
   echo "$1"
   if(($1==0)); then 
-    echo "$2 is SUCCESS"
+    echo "$2 is SUCCESS" |tee -a $LOG_File
   else
-    echo "$2 is FAILURE "
+    echo "$2 is FAILURE " |tee -a $LOG_File
     exit 1
   fi
 }
