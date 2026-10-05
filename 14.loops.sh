@@ -21,14 +21,14 @@ VALIDATE()
   fi
 }
 
-for i in $@
+for Package in $@
 do
-  dnf list installed $i &>> $LOG_File
+  dnf list installed $Package &>> $LOG_File
   if (($? !=0)); then
-    echo "Package not installed, Installing now"
-    dnf install $i -y
-    VALIDATE $? "Installing $i"
+    echo "$Package not installed, Installing now"
+    dnf install $Package -y &>> $LOG_File
+    VALIDATE $? "Installing $Package"
   else
-    echo "Package already Installed .. skipping"
+    echo "$Package already Installed .. skipping"
   fi
 done
