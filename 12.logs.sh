@@ -9,6 +9,7 @@ if (($USER != 0)); then
    exit 1
 fi
 
+mkdir -p $LOG_DIR
 VALIDATE()
 {
   echo "$1"
