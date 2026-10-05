@@ -23,6 +23,6 @@ VALIDATE()
 
 for i in $@
 do
-    dnf install $i
+    dnf install $i -y
     VALIDATE $? "Installing $i"
 done
