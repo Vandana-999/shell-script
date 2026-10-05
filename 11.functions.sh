@@ -9,7 +9,7 @@ fi
 
 VALIDATE()
 {
-  echo $1
+  echo "$1"
   if(($1==0)); then 
     echo "$2 is SUCCESS"
   else
