@@ -24,7 +24,7 @@ VALIDATE()
 for i in $@
 do
   dnf list installed $i
-  if (($? !=0))
+  if (($? !=0)); then
     echo "Package not installed, Installing now"
     dnf install $i -y
     VALIDATE $? "Installing $i"
