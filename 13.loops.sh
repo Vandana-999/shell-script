@@ -21,7 +21,7 @@ VALIDATE()
   fi
 }
 
-for i in @a
+for i in $@
 do
     dnf install $i
     VALIDATE $? "Installing $i"
