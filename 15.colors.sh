@@ -28,10 +28,10 @@ for Package in $@
 do
   dnf list installed $Package &>> $LOG_File
   if (($? !=0)); then
-    echo "$Package not installed, $Y Installing now $N"
+    echo -e "$Package not installed, $Y Installing now $N"
     dnf install $Package -y &>> $LOG_File
     VALIDATE $? "Installing $Package"
   else
-    echo "$Package already Installed .. $Y skipping $N"
+    echo -e "$Package already Installed .. $Y skipping $N"
   fi
 done
